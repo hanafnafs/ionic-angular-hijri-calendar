@@ -9,4 +9,8 @@ export class HomePage {
 
   constructor() {}
 
+
+  onWillDismiss(ev){
+    console.log(ev);
+  }
 }

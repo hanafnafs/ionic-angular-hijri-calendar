@@ -1,0 +1,79 @@
+.day {
+  display: inline-block;
+  width: 12%;
+  height: 6vh;
+  border: 0.5px solid #12a8c0;
+  background: white;
+  position: relative;
+  text-align: left;
+}
+
+.week-day {
+  display: inline-block;
+  width: 12%;
+  text-align: center;
+  background: #0c375a;
+  border: 0.5px solid #12a8c0;
+  color: white;
+}
+
+.muted {
+  color: silver;
+}
+
+.calendar-container {
+  width: 90%;
+  margin: auto;
+  display: block;
+  background: white;
+  border-radius: 20px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.week {
+  text-align: center;
+}
+
+.no-gutters {
+  text-align: center;
+  margin-top: 5px;
+  // margin-bottom: 5px;
+}
+
+
+
+#georg-day {
+  position: relative;
+  top: 0px;
+  left: 2px;
+
+  span {
+    font-size: 14px;
+  }
+}
+#hijri-day{
+  font-size: 11px;
+}
+#hijri-month{
+  margin-right: 3px;
+}
+
+#hijri-cont {
+  font-size: 11px;
+  margin-right: 4px;
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+}
+
+.period-container {
+  display: flex;
+
+  ion-item {
+    width: 45%;
+    direction: rtl;
+    margin: auto;
+  }
+}

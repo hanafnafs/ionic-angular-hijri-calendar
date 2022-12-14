@@ -1,0 +1,57 @@
+<div class="calendar-container">
+  <div class="period-container">
+    <ion-item lines="none" class="selectItem">
+      <ion-label *ngIf="!selectedYearAndMonth['year'].value">السنة</ion-label>
+      <ion-label *ngIf="selectedYearAndMonth['year'].value">{{
+        selectedYearAndMonth["year"].text
+      }}</ion-label>
+      <ion-select
+        interface="action-sheet"
+        okText="تم"
+        cancelText="إلغاء"
+        [(ngModel)]="selectedYearAndMonth['year']"
+        (ionChange)="onPeriodChange('year', $event)"
+      >
+        <ion-select-option *ngFor="let year of years" [value]="year">{{
+          year?.text
+        }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item lines="none" class="selectItem">
+      <ion-label *ngIf="!selectedYearAndMonth['month'].value">الشهر</ion-label>
+      <ion-label *ngIf="selectedYearAndMonth['month'].value">{{
+        selectedYearAndMonth["month"].text
+      }}</ion-label>
+
+      <ion-select
+        interface="action-sheet"
+        okText="تم"
+        cancelText="إلغاء"
+        [(ngModel)]="selectedYearAndMonth['month']"
+        (ionChange)="onPeriodChange('month', $event)"
+      >
+        <ion-select-option *ngFor="let month of months" [value]="month">{{
+          month?.text
+        }}</ion-select-option>
+      </ion-select>
+    </ion-item>
+  </div>
+  <div class="no-gutters">
+    <div class="week-day" *ngFor="let date of weekdaysAr">{{ date }}</div>
+  </div>
+  <div class="week" *ngFor="let week of days">
+    <!-- [class.muted]="!day.isMonth" -->
+    <div class="day" [class.muted]="(!day.isMonth && mode == 'georgian') || (mode == 'hijri' && hijriMonth != day.hijriMonth)" *ngFor="let day of week">
+      <div id="georg-day">
+        <span>{{ georMonths[day.georgianMonth].value }}/ {{ day?.day }}</span>
+      </div>
+      <div id="hijri-cont">
+        <span id="hijri-month">{{
+          hijriMonths[this.getCorrespondingMonth(day.hijri.split("/")[1]) - 1]
+            ?.abbreviation
+        }}</span>
+        <span id="hijri-day">{{ day?.hijri?.split("/")[2] }}</span>
+      </div>
+    </div>
+  </div>
+</div>

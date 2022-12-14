@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
+import { CalendarDemoComponent } from '../components/calendar-demo/calendar-demo.component';
+import { ChunkPipe } from '../components/calendar-demo/chunk-pipe';
 
 
 @NgModule({
@@ -14,6 +16,7 @@ import { HomePageRoutingModule } from './home-routing.module';
     IonicModule,
     HomePageRoutingModule
   ],
-  declarations: [HomePage]
+  declarations: [HomePage, CalendarDemoComponent, ChunkPipe],
+  exports:[ChunkPipe]
 })
 export class HomePageModule {}
