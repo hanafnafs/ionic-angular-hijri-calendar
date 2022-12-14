@@ -12,7 +12,7 @@ export class CalendarDemoComponent implements OnInit {
   @Input() maxDate: Date;
   @Input() minDate: Date;
   @Input() selectToday: boolean = true;
-  @Input() mode: string = 'georgian';
+  @Input() mode: string = 'hijri';
   hijriMonths = [
     { text: 'محرم', value: 1, abbreviation: 'م' },
     { text: 'صفر', value: 2, abbreviation: 'ص' },
